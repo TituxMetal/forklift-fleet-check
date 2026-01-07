@@ -1,0 +1,62 @@
+{
+  "name": "@app/api",
+  "version": "0.0.1",
+  "description": "NestJS api with clean architecture for fullstack app",
+  "author": "Titux Metal",
+  "private": true,
+  "scripts": {
+    "build": "nest build",
+    "docker:build": "../../scripts/docker-build.sh api",
+    "docker:push": "docker push lgdweb/forklift-fleet-check-api:latest",
+    "dev": "bun --watch run src/main.ts",
+    "start": "bun run src/main.ts",
+    "start:prod": "bun run dist/src/main.js",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "prisma": "prisma",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf coverage dist .turbo generated"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.11",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.1.11",
+    "@nestjs/mapped-types": "^2.1.0",
+    "@nestjs/platform-express": "^11.1.11",
+    "@prisma/adapter-libsql": "^7.2.0",
+    "@prisma/client": "^7.2.0",
+    "@thallesp/nestjs-better-auth": "^2.2.0",
+    "@types/cookie-parser": "^1.4.10",
+    "argon2": "^0.44.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.2.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.14",
+    "@nestjs/schematics": "^11.0.9",
+    "@nestjs/testing": "^11.1.11",
+    "@packages/eslint-config": "workspace:*",
+    "@packages/ts-config": "workspace:*",
+    "@prisma/client-runtime-utils": "^7.2.0",
+    "@types/bun": "latest",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.10.1",
+    "@types/supertest": "^6.0.3",
+    "@types/uuid": "^11.0.0",
+    "core-js": "^3.47.0",
+    "prisma": "^7.2.0",
+    "supertest": "^7.1.4",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "better-auth": "1.4.10"
+  }
+}

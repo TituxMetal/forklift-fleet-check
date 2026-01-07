@@ -1,0 +1,57 @@
+{
+  "name": "@app/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Astro with React integration for fullstack app",
+  "author": "Titux Metal",
+  "type": "module",
+  "scripts": {
+    "build": "astro build",
+    "docker:build": "../../scripts/docker-build.sh web",
+    "docker:push": "docker push lgdweb/forklift-fleet-check-web:latest",
+    "dev": "astro dev",
+    "start": "astro preview",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "test:watch": "bun test --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf node_modules coverage dist .astro .turbo"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.5.1",
+    "@astrojs/react": "^4.4.2",
+    "@hookform/resolvers": "^5.2.2",
+    "@nanostores/react": "^1.0.0",
+    "astro": "^5.16.6",
+    "astro-icon": "^1.1.5",
+    "nanostores": "^1.1.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-hook-form": "^7.70.0",
+    "react-icons": "^5.5.0",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@happy-dom/global-registrator": "^17.0.0",
+    "@packages/eslint-config": "workspace:*",
+    "@packages/ts-config": "workspace:*",
+    "@tailwindcss/vite": "^4.1.18",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/bun": "latest",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint-plugin-boundaries": "^5.3.1",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  },
+  "peerDependencies": {
+    "better-auth": "1.4.10"
+  }
+}

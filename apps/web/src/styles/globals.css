@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@layer base {
+  /* Ensure immediate rendering with critical styles */
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    @apply h-full;
+    /* Prevent layout shift */
+    overflow-y: scroll;
+  }
+
+  body {
+    @apply flex min-h-screen flex-col bg-zinc-900 font-sans text-neutral-100 antialiased;
+    /* Prevent FOUC by ensuring body is styled immediately */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure color scheme is set immediately */
+  @media (prefers-color-scheme: dark) or (prefers-color-scheme: light) {
+    html {
+      color-scheme: dark;
+    }
+  }
+
+  /* Optimize rendering performance */
+  img {
+    @apply h-auto max-w-full;
+  }
+
+  /* Fix browser warning about sectioned h1 elements */
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.67em 0;
+    line-height: 1.2;
+  }
+
+  /* Prevent layout shifts from missing elements */
+  .min-h-screen {
+    min-height: 100vh;
+  }
+}

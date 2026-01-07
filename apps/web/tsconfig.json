@@ -1,0 +1,15 @@
+{
+  "extends": "@packages/ts-config/web",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"],
+      "~icons/*": ["src/assets/icons/*"],
+      "~ui/*": ["src/components/ui/*"],
+      "~features/*": ["src/features/*"]
+    }
+  },
+  "include": ["src/**/*", "*.ts", "*.tsx", "**/*.astro", "**/*.d.ts", "**/*.spec.tsx"],
+  "exclude": ["node_modules", "dist", "coverage", ".turbo", ".astro"]
+}
